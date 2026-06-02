@@ -1,6 +1,11 @@
 import pandas as pd
+import os
 
-faq_df = pd.read_csv("banking_faq.csv")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+faq_path = os.path.join(BASE_DIR, "banking_faq.csv")
+
+faq_df = pd.read_csv(faq_path)
 
 FAQS = dict(
     zip(
